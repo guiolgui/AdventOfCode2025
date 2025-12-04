@@ -1,5 +1,8 @@
 const tools = require('../General/tools');
 
+const bLog = true;
+// const bLog = false;
+
 function main() {
     // tools.readFileSync('./input')
     // tools.readFileSync('./input_test')
@@ -35,5 +38,19 @@ function part_two(t) {
     let result = 0;
     return result;
 }
+
+function stdout(sOutput) {
+    if (!bLog) {
+        return;
+    }
+    process.stdout.write(sOutput);
+}
+function jumpline() {
+    if (!bLog) {
+        return;
+    }
+    process.stdout.write(`\r\n`);
+}
+
 
 main();
