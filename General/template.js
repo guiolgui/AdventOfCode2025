@@ -1,7 +1,7 @@
 const tools = require('../General/tools');
 
-const bLog = true;
-// const bLog = false;
+let bLog = true;
+// bLog = false;
 
 function main() {
     // tools.readFileSync('./input')
