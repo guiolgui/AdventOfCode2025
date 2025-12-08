@@ -39,6 +39,13 @@ function part_two(t) {
     return result;
 }
 
+function logTables(tTable) {
+    if (!bLog) {
+        return;
+    }
+    console.table(tTable);
+}
+
 function stdout(sOutput) {
     if (!bLog) {
         return;
