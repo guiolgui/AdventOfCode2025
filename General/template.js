@@ -1,20 +1,14 @@
 const tools = require('../General/tools');
 
-let bLog = true;
+let bLog = true; let sFileInput = 'input';
 // bLog = false;
+sFileInput = 'input_test';
 
 function main() {
-    // tools.readFileSync('./input')
-    // tools.readFileSync('./input_test')
-    // const sFileInput = 'input'; 
-    const sFileInput = 'input_test';
+    
     tools.readFileSync(require('path').resolve(__dirname, sFileInput))
         .then((data) => { 
-            // console.log('------File------');
-            // console.log(data);
-            // console.log('----------------');
             let t = data.split('\r\n');
-            // let t = data.split('\r\n').map(m => m.split(''));
             console.time('P1');
             console.log('Partie 1 :>> ',part_one(t));
             console.timeEnd('P1');
@@ -52,11 +46,20 @@ function stdout(sOutput) {
     }
     process.stdout.write(sOutput);
 }
+
 function jumpline() {
     if (!bLog) {
         return;
     }
     process.stdout.write(`\r\n`);
+}
+
+function stdoutl(sOutput) {
+    if (!bLog) {
+        return;
+    }
+    stdout(sOutput);
+    jumpline();
 }
 
 
